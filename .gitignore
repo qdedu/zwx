@@ -1,9 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -18,6 +16,17 @@
 .env.test.local
 .env.production.local
 
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
+
+.DS_Store
+npm-debug.log
+selenium-debug.log
+test/unit/coverage
+test/e2e/reports
+.project
+.idea/*
+.vscode

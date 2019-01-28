@@ -1,0 +1,39 @@
+// 垂直居中
+.flex-align{
+  display: flex;
+  align-items: center;
+}
+.flex-bottom{
+  display:flex;
+  align-items: flex-end;
+}
+
+// 垂直水平居中
+.flex-align-center{
+  .flex-align;
+  justify-content: center;
+}
+
+// 垂直居中 水平两端对齐
+.flex-align-between{
+  .flex-align;
+  justify-content: space-between;
+}
+
+// 垂直居中 换行
+.flex-align-wrap{
+  .flex-align;
+  flex-wrap: wrap;
+}
+
+// 垂直方向居中显示
+.flex-horizon-center{
+  .flex-align;
+  flex-flow:column;
+}
+
+// 垂直居中不换行
+.flex-align-nowrap{
+  .flex-align;
+  flex-wrap: no-wrap;
+}

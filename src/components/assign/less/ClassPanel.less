@@ -1,0 +1,69 @@
+@import '../../../less/skin.less';
+
+.classPanel { 
+    display:none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    .show{
+        display:block;
+    }
+    .model{
+        position: absolute;
+        background-color: #999;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0.9;
+        z-index: 1001;
+    }
+    .class-list{
+        position: absolute;
+        z-index: 1002;
+        width: 100%;
+        bottom: 0px;
+        background-color: #fff;
+        font-size: 1.6rem;
+      //  padding-bottom:15px;
+        .class-content{
+            padding-bottom:55px;
+            overflow: hidden;
+        }
+        .class-list-item {
+            display:inline-block;
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid @colorBorder;
+            padding: 4px;
+            margin:5px 12px;
+        }
+        .selected{
+            border: 1px solid @colorGreenTag;
+            color: @colorGreenTag;
+        }
+        .receiver{
+            font-weight: bold;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 12px;
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+            padding:5px;
+        }
+        .save-button{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background-color: @colorGreenTag;
+        }
+    }
+}

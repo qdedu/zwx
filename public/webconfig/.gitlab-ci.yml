@@ -1,0 +1,4 @@
+develop-build:
+  script: 
+  - git status
+  - dir

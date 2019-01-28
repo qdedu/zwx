@@ -1,0 +1,95 @@
+.read-list{
+     overflow: hidden;
+     margin-bottom: 70px;
+    .pack-up{
+      background:#f7f6f6;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height:70px;
+      margin:0 10px 10px 10px;
+      padding:0px 5px;
+    }
+    .readStatus{
+      width:20%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height:100%;
+    }
+    .icon,.readIcon{
+      width: 0px;
+      height: 14px;
+      border-left: 2px solid #fb7263;
+      margin-right: 6px;
+    }
+    .readIcon{
+      border-left: 2px solid #00cc56;
+    }
+    .less-content{
+      width:75%;
+      overflow:hidden;
+      display:flex;
+      flex-direction: row;
+    }
+    .content{
+      width:75%;
+      overflow:hidden;
+      display: grid;
+      grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+      //grid-gap: 10px;
+      //display:flex;
+      //flex-direction: row;
+      //align-items: center;
+      //justify-content: space-around;
+    }
+    .user-item{
+      //float: left;
+      width:40px;
+      height:40px;
+      margin:15px 5px 0 5px;
+      img{
+        width:25px;
+        height:25px;
+      }
+    }
+    //@media screen and(max-width:360px){
+    //    .content{
+    //      width:220px;
+    //      overflow: hidden;
+    //    }
+    //    .user-item{
+    //       width:30px;
+    //     }
+    //}
+    .showMore{
+      width:10px;
+      height:15px;
+    }
+    .more-user-item:last-child{
+      .true-name {
+        color: #f7f6f6;
+      }
+    }
+    .true-name{
+      display: block;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 3rem;
+      font-size:1rem;
+    }
+    .unreadFlag{
+      width:25px;
+      height:25px;
+    }
+    .status-content{
+     // font-size: 1.1rem;
+    }
+    .count{
+      font-size: 1.4rem;
+      margin-left: 5px;
+    }
+    .hide{
+      display:none;
+    }
+}

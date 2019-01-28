@@ -1,0 +1,149 @@
+@import '../../../less/skin.less';
+.notify-detail{
+  overflow-x:hidden;
+  padding:12px 12px;
+  background: @colorWhite;
+  //position: relative;
+  .infoBox{
+    overflow: hidden;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .message-title{
+    line-height: 1.8;
+  }
+  .time-info{
+    float: left;
+    color:#aaa;
+    margin-top:3px;
+    font-size: 1.2rem;
+  }
+  .classStyle,.teacherStyle{
+    float: right;
+    padding-right: 10px;
+   // position: absolute;
+   // z-index: 99;
+    //right:0;
+    //top:5.79%;
+    font-size:1.2rem;
+    position: relative;
+    z-index: 102;
+  }
+  .classStyle{
+    color:@colorIconAudio;
+  }
+  .haveRes{
+    font-size: 1.5rem;
+  }
+  .message-isread{
+    float: right;
+    color: #2d82e7;
+  }
+  .message-prompt{
+
+  }
+  .message-info{
+    display: block;
+    margin: 20px  0;
+  }
+  .first-content{
+    font-size: 1.3rem;
+  }
+  .confirm-button {
+    background-color: @colorTheme;
+    position: fixed;
+    display:inline-block;
+    height: 24px;
+    width: 150px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-75px);
+    color:@colorWhite;
+    line-height: 24px;
+    border-radius: 10px;
+    text-align: center;
+    padding:6px;
+    font-size: 1.5rem;
+    z-index: 10;
+  }
+  .active {
+    background-color: #eee;
+    color: #aaa;
+  }
+  .hide{
+    display:none!important;
+  }
+  .studentList{
+    overflow: hidden;
+    position: fixed;
+    background: @colorWhite;
+    bottom:0;
+    left: 1%;
+    width:98%;
+    z-index:102;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border:1px solid #ccc;
+  }
+  .list-head{
+    font-size: 1.5rem;
+    color: #545454;
+    text-align: center;
+    padding:10px 0;
+  }
+  .status-box{
+    overflow: hidden;
+    float: right;
+    padding:10px;
+    font-size: 1.3rem;
+    display: flex;
+  }
+  .colorFlag{
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+  }
+  .haveUpload,.noUpload{
+    color:@questionTitle;
+    display: flex;
+    align-items: center;
+    margin-right:15px;
+    font-size: 1rem;
+    div{
+      background: @questionTitle;
+      margin-right:5px;
+    }
+  }
+  .noUpload{
+    color:#aaa;
+    div{
+      background: #aaa;
+    }
+  }
+  .list-content{
+    overflow: auto;
+    padding:10px;
+    clear: both;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-height:300px;
+  }
+  .itemRes{
+    margin:10px 0;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .submit{
+    color:@questionTitle
+  }
+  .unSubmit{
+    color:#aaa
+  }
+}
+.stopScroll{
+  overflow: hidden;
+}

@@ -1,0 +1,6 @@
+[submodule "public/webconfig"]
+	path = public/webconfig
+	url = http://code.tfedu.net/frontend/webconfig.git
+[submodule "public/fe-lib"]
+	path = public/fe-lib
+	url = http://code.tfedu.net/frontend/fe-lib.git

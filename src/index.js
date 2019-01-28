@@ -1,12 +1,30 @@
-import React from 'react';
+import React from "react"
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './config'
+import './utils/index'
+import 'antd-mobile/dist/antd-mobile.css';
+import './utils/tools/Vconsole'
+import './utils/hybrid/bridge.js'
+import { Store } from 'edu-common'
+import App from './App.js'
+import classnames from 'classnames'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+window.store = Store.localStore 
+window.Cookies = Store.cookieStore
+window.classnames = classnames
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render( <App />, document.getElementById('root'));
+
+// Webpack Hot Module Replacement API
+import {AppContainer} from 'react-hot-loader';
+if (module.hot) {
+	module.hot.accept('./App', () => {
+		const NextApp = require('./App').default; // eslint-disable-line global-require
+		ReactDOM.render(
+			<AppContainer>
+				<NextApp/>
+			</AppContainer>,
+			document.getElementById('root')
+		)
+	})
+}

@@ -1,0 +1,45 @@
+stages:
+- update
+- build
+- publish
+
+
+
+cache:
+    untracked: true
+    
+update:
+  stage: update
+  only:
+    - master
+  script:
+    - yarn install
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - npm run build
+    
+publish-master:
+  stage: publish
+  only:
+    - master
+  script:
+    - cp -rf build/*  /var/www/html/smartedu-container/lyx/
+
+
+publish-release:
+  stage: publish
+  only:
+    - release
+  script:
+    - git checkout release
+    - git pull
+    - npm run build
+    - cp -rf build/*  //var/www/html/frontend-releases/lyx-release
+    - cd /var/www/html/frontend-releases/lyx-release
+    - git add --all
+    - git commit -m "release update"
+    - git push origin master

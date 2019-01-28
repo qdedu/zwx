@@ -1,0 +1,33 @@
+@import "common";
+.list-item {
+  display: -webkit-box;
+ // display: inline-block;
+  //width: 80px;
+  -webkit-box-align: center;
+  padding-bottom: 20px;
+  .check,
+  img,
+  .child-name{
+    margin-right: 10px;
+   // display: inline-block;
+    color: #454545;
+  }
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+  }
+  .parent-name{
+    -webkit-box-flex:3;
+    text-align: right;
+  }
+}
+.am-checkbox-inner:after {
+  right: 6px;
+  width: 5px;
+  height: 11px;
+}
+.am-checkbox-inner, .am-checkbox {
+  width: 20px;
+  height: 20px;
+}
