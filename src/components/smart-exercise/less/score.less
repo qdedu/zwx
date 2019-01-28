@@ -1,0 +1,75 @@
+@import "../../../less/skin.less";
+.score-box{
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    .score{
+      width: 66.3%;
+      margin: 22px auto 30px auto;
+      border-radius:5px;
+      box-shadow:1px 1px 1px #888888;
+      overflow: hidden;
+    }
+    .title{
+        background-color: @questionTitle;
+        color: #fff;
+        padding: 9px 0;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-size: 1.3rem;
+    }
+    .content{
+      text-align: center;
+      padding: 8px 0;
+    }
+    .correct{
+        color: @correct;
+        font-size: 5rem;
+        margin-right: 4px;
+    }
+    .total{
+      font-size: 1.8rem;
+      color: @helpTitle
+    }
+   .detail{
+     width: 66.3%;
+     overflow: hidden;
+     margin:0 auto 20px auto;
+   }
+   .item{
+      width: 14%;
+      height: 0;//15px
+      border-radius: 50%;
+      background-color: @correct;
+      padding-bottom:14%;
+      float: left;
+      margin-bottom: 15px;
+      margin-right:7.2% ;
+      position: relative;
+      text-align: center;
+      font-size: 1.5rem;
+   }
+  .number{
+    margin-top: 25%;
+    color: @colorWhite;
+  }
+  .item:nth-child(5),
+  .item:nth-child(10){
+    margin-right: 0;
+  }
+  .correctBg{
+    background-color: @correct;
+  }
+  .errorBg{
+    background-color: @error;
+  }
+  .more-style{
+    margin:5px auto;
+    clear:both;
+    width:10%;
+  }
+  .question-list{
+    overflow: hidden;
+  }
+}

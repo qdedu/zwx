@@ -1,0 +1,66 @@
+@import "../../../less/skin.less";
+.answer-item{
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    .answer-author{
+        background-color: #fff;
+        padding: 13px 0 13px 15px;
+        font-size: 15px;
+        color: @colorAnswer;
+        .answer-author-teacher{
+            padding-left: 5px;
+        }
+    }
+    .delete-btn{
+        float:right;
+        width: 40px;
+        height: 17px;
+        text-align: center;
+        line-height: 17px;
+        background: @colorBtnBg;
+        border-radius: 10px;
+    }
+    .answer-detail{
+        background-color: #fff;
+        border-top: 1px solid #e4e4e4;
+        padding: 15px 18px;
+        &::before{
+            display:block;
+            content:'';
+            clear:both;
+        }
+        .delete-btn{
+            margin-top: 10px;
+        }
+        .answer-praise{
+            display: inline-block;
+        }
+        .publish-time{
+            float: right;
+        }
+    }
+    .answer-student{
+        background-color: #fff;
+        margin-top: 10px;
+    }
+    .answer-author-student{
+        border-left: 3px solid @colorBorderAnswer;
+        padding-left: 5px;
+        color: @colorDescribe;
+    }
+    .answer-text{
+        line-height: 22px;
+        word-break: break-all;
+    }
+    //图片+视频+音频
+    .photo-record-sound>img,.photo-record-sound>video,.photo-record-sound>audio{
+        margin: 15px 0;
+        display: block;
+        max-width: 100%;
+    }
+    // 显示教师还是学生答题
+    .not-active{
+        display:none
+    }
+}
