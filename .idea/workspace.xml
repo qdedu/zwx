@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="647475d7-d7b2-43de-a4fc-f78f64e39d6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.64494103">
+    <splitter split-orientation="horizontal" split-proportion="0.66604596">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -29,26 +31,35 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/example.jsx">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-column="25" />
+                <state relative-caret-position="416">
+                  <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
                   <folding>
-                    <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#0#38#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="320">
-                  <caret line="34" column="76" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
+                <state relative-caret-position="448">
+                  <caret line="32" column="22" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="32" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/utils/tools/common.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="360" column="38" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -60,8 +71,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+                <state relative-caret-position="480">
+                  <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="64">
+                  <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -104,8 +124,10 @@
         <option value="$PROJECT_DIR$/src/pages/main.jsx" />
         <option value="$PROJECT_DIR$/src/router/demo-router.js" />
         <option value="$PROJECT_DIR$/src/router/router.js" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" />
         <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" />
         <option value="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" />
       </list>
     </option>
   </component>
@@ -156,6 +178,14 @@
               <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="lecture" type="462c0819:PsiDirectoryNode" />
+              <item name="less" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -180,11 +210,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\web\zhl-h5-zwx\src\pages\lecture\less" />
       <recent name="E:\web\zhl-h5-zwx\src\api" />
       <recent name="E:\web\zhl-h5-zwx\src\pages" />
       <recent name="E:\web\zhl-h5-zwx\src\router" />
       <recent name="E:\web\zhl-h5-zwx" />
-      <recent name="E:\web\zhl-h5-zwx\config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -227,7 +257,7 @@
       <option name="presentableId" value="Default" />
       <updated>1548638488766</updated>
       <workItem from="1548638489984" duration="6599000" />
-      <workItem from="1548732725313" duration="3504000" />
+      <workItem from="1548732725313" duration="5809000" />
     </task>
     <task id="LOCAL-00001" summary="添加readme文件文件">
       <created>1548638625803</created>
@@ -236,17 +266,24 @@
       <option name="project" value="LOCAL" />
       <updated>1548638625803</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加课程列表UI">
+      <created>1548743991876</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548743991876</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10728000" />
+    <option name="totallyTimeSpent" value="13033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989775" visible="true" weight="0.1512118" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989775" weight="0.1512118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5010225" side_tool="true" weight="0.20337197" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -259,7 +296,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.16160521" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.16160521" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -271,7 +308,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加readme文件文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加readme文件文件" />
+    <MESSAGE value="添加课程列表UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加课程列表UI" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -414,6 +452,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/less/skin.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2112">
+          <caret line="120" column="8" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/example.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -426,29 +471,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/router/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/skin.less">
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2112">
-          <caret line="120" column="8" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
+        <state relative-caret-position="64">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="480">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/tools/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="360" column="38" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="34" column="76" selection-start-line="34" selection-start-column="76" selection-end-line="34" selection-end-column="76" />
+        <state relative-caret-position="448">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
