@@ -56,18 +56,7 @@ class LectureList extends Component {
         return result.data.content.result.url
     }
 
-    async getVideoUrlPath(path) {
-        let className = "com.zhl.unify.interfaces.move_work.service.ZwxWebService";
-        let method = "getDecodeUrlWeb";
 
-        var contentJson = {
-            "path": path,
-            "type": 0
-        }
-        let params = new DoApi.createParamJSON(className, method, contentJson)
-        let result = await Api.getZhlInterfaceUnifyEntry(params)
-        return result.data.content.result.url
-    }
 
     render() {
         let {result} = this.state

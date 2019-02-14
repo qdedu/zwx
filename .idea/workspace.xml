@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="647475d7-d7b2-43de-a4fc-f78f64e39d6b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/lecture/less/VideoContainer.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,14 +21,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5626464">
+    <splitter split-orientation="horizontal" split-proportion="0.74648714">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1471">
-                  <caret line="33" selection-start-line="33" selection-end-line="33" />
+                <state relative-caret-position="-671">
+                  <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -33,57 +37,46 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/api/api.js">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/node_modules/edu-common/src/utils/ApiDecorator.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="832">
-                  <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+                <state relative-caret-position="392">
+                  <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
                   <folding>
-                    <element signature="e#0#39#0" expanded="true" />
+                    <element signature="e#0#38#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils/decorator/api-decorator.js">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils/axios/ApiDecorator.js">
+            <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="832">
-                  <caret line="27" column="64" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+                <state relative-caret-position="359">
+                  <caret line="138" column="17" lean-forward="true" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
                   <folding>
-                    <element signature="e#0#39#0" expanded="true" />
+                    <element signature="n#!!block;n#jest#0;n#!!top" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils/axios/DoApi.js">
+            <entry file="file://$PROJECT_DIR$/src/components/assign/UploadPicture.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3296">
-                  <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+                <state relative-caret-position="361">
+                  <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/node_modules/edu-common/src/service/DoApi.js">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1920">
-                  <caret line="60" column="43" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+                <state relative-caret-position="448">
+                  <caret line="56" column="31" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -91,12 +84,30 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="256">
+                  <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+                <state relative-caret-position="416">
+                  <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/VideoContainer.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="313">
+                  <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -119,6 +130,8 @@
       <find>plupload.full.min</find>
       <find>Access-Control-Request-Method</find>
       <find>doJson</find>
+      <find>getDerivedStateFromProps</find>
+      <find>videoPath</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -142,23 +155,25 @@
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/pages/main.jsx" />
         <option value="$PROJECT_DIR$/src/router/router.js" />
-        <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" />
-        <option value="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" />
         <option value="$PROJECT_DIR$/src/router/demo-router.js" />
         <option value="$PROJECT_DIR$/public/webconfig/webconfig.js" />
         <option value="$PROJECT_DIR$/node_modules/edu-common/src/utils/AxiosInterceptors.js" />
         <option value="$PROJECT_DIR$/node_modules/edu-common/src/utils/ApiDecorator.js" />
         <option value="$PROJECT_DIR$/src/utils/axios/ApiDecorator.js" />
         <option value="$PROJECT_DIR$/src/utils/axios/DoApi.js" />
-        <option value="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" />
         <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" />
         <option value="$PROJECT_DIR$/src/api/api.js" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/less/VideoContainer.less" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="176" />
-    <option name="y" value="-21" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -225,6 +240,19 @@
               <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -279,8 +307,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\web\zhl-h5-zwx\src\utils\axios" />
       <recent name="E:\web\zhl-h5-zwx\src\pages\lecture\less" />
+      <recent name="E:\web\zhl-h5-zwx\src\utils\axios" />
       <recent name="E:\web\zhl-h5-zwx\src\api" />
       <recent name="E:\web\zhl-h5-zwx\src\pages" />
       <recent name="E:\web\zhl-h5-zwx\src\router" />
@@ -329,7 +357,7 @@
       <workItem from="1548732725313" duration="5902000" />
       <workItem from="1548753405227" duration="22000" />
       <workItem from="1550019101971" duration="20440000" />
-      <workItem from="1550103080274" duration="8654000" />
+      <workItem from="1550103080274" duration="22871000" />
     </task>
     <task id="LOCAL-00001" summary="添加readme文件文件">
       <created>1548638625803</created>
@@ -366,36 +394,43 @@
       <option name="project" value="LOCAL" />
       <updated>1550054102365</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="调整布局样式">
+      <created>1550115345372</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1550115345372</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42242000" />
+    <option name="totallyTimeSpent" value="56459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989775" visible="true" weight="0.100105375" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989775" visible="true" weight="0.122068234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5010225" side_tool="true" weight="0.20337197" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.10520607" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21041214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.16160521" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.5130152" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.06609808" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.06609808" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +442,8 @@
     <MESSAGE value="课程详情页UI搭建" />
     <MESSAGE value="修改网络请求框架" />
     <MESSAGE value="资源列表页接口数据对接" />
-    <option name="LAST_COMMIT_MESSAGE" value="资源列表页接口数据对接" />
+    <MESSAGE value="调整布局样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整布局样式" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -460,9 +496,6 @@
           <caret line="14136" selection-start-line="14136" selection-end-line="14136" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yarn.lock">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config-overrides.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -596,16 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -631,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/edu-common/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -649,16 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="5" column="61" lean-forward="true" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!block;n#jest#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -699,27 +705,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
+    <entry file="file://$PROJECT_DIR$/src/api/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1471">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="644">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/VideoContainer.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="56" column="31" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="31" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="-671">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/api.js">
+    <entry file="file://$PROJECT_DIR$/src/components/assign/UploadPicture.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="361">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="138" column="17" lean-forward="true" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!block;n#jest#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

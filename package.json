@@ -65,7 +65,7 @@
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
     "raf": "3.4.0",
-    "react": "^16.2.0",
+    "react": "^16.8.1",
     "react-app-rewire-hot-loader": "^1.0.0",
     "react-app-rewire-mobx": "^1.0.7",
     "react-circle": "^1.0.3",
