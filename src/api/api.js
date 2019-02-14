@@ -28,14 +28,13 @@ class Api {
     }
 
     /**
-     * 获取课程下的视频和测试
-     *
-     * @Title: getContentByCurrId
+     * 助我学通用post接口
      */
     @url('/zhlInterfaceUnifyEntry')
     @post
-    getContentByCurrId() {
+    getZhlInterfaceUnifyEntry() {
     }
+
 
 }
 

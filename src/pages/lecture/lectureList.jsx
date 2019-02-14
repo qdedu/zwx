@@ -30,8 +30,11 @@ class LectureList extends Component {
             "token": "9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF"
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
-        let result = await Api.getContentByCurrId(params)
-
+        let result = await Api.getZhlInterfaceUnifyEntry(params)
+        if (!result.data) return false
+        for (let i = 0; i < result.data.content.result.res.length; i++) {
+            result.data.content.result.res[i].questionPath = await this.getImgUrlPath(result.data.content.result.res[i].questionPath)
+        }
 
         this.setState({
                 result
@@ -40,9 +43,34 @@ class LectureList extends Component {
     }
 
 
+    async getImgUrlPath(path) {
+        let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
+        let method = "getDecodeUrl_img";
+
+        var contentJson = {
+            "path": path,
+        }
+        let params = new DoApi.createParamJSON(className, method, contentJson)
+        let result = await Api.getZhlInterfaceUnifyEntry(params)
+        console.log(result.data.content.result.url, 1111)
+        return result.data.content.result.url
+    }
+
+    async getVideoUrlPath(path) {
+        let className = "com.zhl.unify.interfaces.move_work.service.ZwxWebService";
+        let method = "getDecodeUrlWeb";
+
+        var contentJson = {
+            "path": path,
+            "type": 0
+        }
+        let params = new DoApi.createParamJSON(className, method, contentJson)
+        let result = await Api.getZhlInterfaceUnifyEntry(params)
+        return result.data.content.result.url
+    }
+
     render() {
         let {result} = this.state
-        console.log("111", result, result.data)
         return (
             <div id='root'>
                 <div id='title-bar'>
@@ -52,9 +80,9 @@ class LectureList extends Component {
                     (result.data && result.data.content.result.res || []).map((item, index) => {
                             return (
                                 <div key={index} id='item-root' onClick={this.onClickLectureItem}>
-                                    <div id ='img-root'>
-                                        <img id='imgs' src='https://avatar.csdn.net/6/0/6/3_xieluoxixi.jpg'/>
-                                        <span id = 'text-time'>{item.videoDuration}</span>
+                                    <div id='img-root'>
+                                        <img id='imgs' src={item.questionPath}/>
+                                        <span id='text-time'>{item.videoDuration}</span>
                                     </div>
                                     <div id='text-container'>
                                         <span id='title-text'>{item.videoTitle}</span>
