@@ -3,6 +3,7 @@ import './less/lectureDetail.less'
 import DoApi from "../../utils/axios/DoApi";
 import Api from "../../api/api";
 import VideoContainer from "./VideoContainer";
+import TitleBar from '../../components/titlebar/TitleBar'
 
 class LectureDetail extends Component {
 
@@ -47,13 +48,13 @@ class LectureDetail extends Component {
         })
     }
 
+
     render() {
         let {result, videoIndex} = this.state
         return (
             <div>
-                <div id='title-bar'>
-                    <span id='title'>几何图形课程列表</span>
-                </div>
+                <TitleBar title='几何图形课程详情页'/>
+
                 <VideoContainer res={result.data && result.data.content.result.res[videoIndex]}/>
                 {
                     (result.data && result.data.content.result.res || []).map((item, index) => {

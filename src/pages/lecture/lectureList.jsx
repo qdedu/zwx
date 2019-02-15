@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import './less/lectureList.less'
 import Api from '../../api/api'
 import DoApi from "../../utils/axios/DoApi";
+import TitleBar from '../../components/titlebar/TitleBar'
 
 class LectureList extends Component {
 
@@ -62,9 +63,7 @@ class LectureList extends Component {
         let {result} = this.state
         return (
             <div id='root'>
-                <div id='title-bar'>
-                    <span id='title'>几何图形课程列表</span>
-                </div>
+                <TitleBar title='几何图形课程列表'/>
                 {
                     (result.data && result.data.content.result.res || []).map((item, index) => {
                             return (
