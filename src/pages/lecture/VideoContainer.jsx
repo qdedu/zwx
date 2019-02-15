@@ -46,7 +46,7 @@ class VideoContainer extends Component {
         return (
             <div id='root'>
                 <video id='video' src={videoUrlPath}
-                       preload='metadata' controls/>
+                       preload='metadata' controls x5-video-orientation="landscape" x5-video-player-type="h5"/>
                 <div id='video-info'>
                     <span id='video-title'>{videoTitle}</span>
                     <span id='video-desc'>{videoDesc}</span>

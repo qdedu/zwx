@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="647475d7-d7b2-43de-a4fc-f78f64e39d6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/static/img/ic_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/titlebar/TitleBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/titlebar/titlebar.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,26 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6570074">
+    <splitter split-orientation="horizontal" split-proportion="0.7344573">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="320">
-                  <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#0#38#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1039">
-                  <caret line="37" selection-start-line="37" selection-end-line="37" />
+                <state relative-caret-position="165">
+                  <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -49,10 +32,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/titlebar/TitleBar.jsx">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="512">
-                  <caret line="16" column="33" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="33" />
+                <state relative-caret-position="480">
+                  <caret line="48" column="109" selection-start-line="48" selection-start-column="109" selection-end-line="48" selection-end-column="109" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -63,35 +46,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
+        <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/titlebar/titlebar.less">
+            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="512">
+                <state relative-caret-position="327">
                   <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/VideoContainer.less">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="640">
-                  <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -116,6 +76,7 @@
       <find>doJson</find>
       <find>getDerivedStateFromProps</find>
       <find>videoPath</find>
+      <find>img</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -147,13 +108,13 @@
         <option value="$PROJECT_DIR$/src/utils/axios/DoApi.js" />
         <option value="$PROJECT_DIR$/src/api/api.js" />
         <option value="$PROJECT_DIR$/src/pages/lecture/less/VideoContainer.less" />
-        <option value="$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx" />
-        <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" />
         <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureList.less" />
         <option value="$PROJECT_DIR$/src/pages/lecture/lectureList.jsx" />
         <option value="$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx" />
         <option value="$PROJECT_DIR$/src/components/titlebar/TitleBar.jsx" />
         <option value="$PROJECT_DIR$/src/components/titlebar/titlebar.less" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less" />
+        <option value="$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx" />
       </list>
     </option>
   </component>
@@ -180,11 +141,6 @@
             <path>
               <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -192,12 +148,6 @@
               <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
@@ -211,6 +161,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="lecture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zhl-h5-zwx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhl-h5-zwx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="lecture" type="462c0819:PsiDirectoryNode" />
+              <item name="less" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,7 +245,7 @@
       <workItem from="1548753405227" duration="22000" />
       <workItem from="1550019101971" duration="20440000" />
       <workItem from="1550103080274" duration="23607000" />
-      <workItem from="1550191651271" duration="2443000" />
+      <workItem from="1550191651271" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="添加readme文件文件">
       <created>1548638625803</created>
@@ -338,11 +296,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550136070170</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="抽取公用TitleBar组件">
+      <created>1550197466982</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1550197466982</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59638000" />
+    <option name="totallyTimeSpent" value="60447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -381,7 +346,8 @@
     <MESSAGE value="资源列表页接口数据对接" />
     <MESSAGE value="调整布局样式" />
     <MESSAGE value="视频详情页接口数据对接" />
-    <option name="LAST_COMMIT_MESSAGE" value="视频详情页接口数据对接" />
+    <MESSAGE value="抽取公用TitleBar组件" />
+    <option name="LAST_COMMIT_MESSAGE" value="抽取公用TitleBar组件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -663,16 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/tools/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -680,13 +636,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureList.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/titlebar/TitleBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/titlebar/titlebar.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -699,38 +669,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+        <state relative-caret-position="224">
+          <caret line="62" column="33" lean-forward="true" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/less/lectureDetail.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lecture/lectureDetail.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1039">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="165">
+          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/titlebar/TitleBar.jsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/lecture/VideoContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="480">
+          <caret line="48" column="109" selection-start-line="48" selection-start-column="109" selection-end-line="48" selection-end-column="109" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/titlebar/titlebar.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>
