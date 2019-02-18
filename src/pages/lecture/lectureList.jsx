@@ -9,12 +9,12 @@ class LectureList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            result: {}
+            result: {},
         }
     }
 
-    onClickLectureItem = async () => {
-        util.goForward(`/lectureDetail`, this)
+    onClickLectureItem = async (item) => {
+        util.goForward(`/lectureDetail?courseId=${item.courseId}&courseTitle=${util.getSearchByName("courseTitle")}`, this)
     }
 
     componentDidMount() {
@@ -27,7 +27,7 @@ class LectureList extends Component {
         let method = "getContentByCurrId";
 
         var contentJson = {
-            "currId": 491,
+            "currId": util.getSearchByName("courseId"),
             "token": "9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF"
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
@@ -53,21 +53,21 @@ class LectureList extends Component {
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)
-        console.log(result.data.content.result.url, 1111)
+
         return result.data.content.result.url
     }
-
 
 
     render() {
         let {result} = this.state
         return (
             <div id='root'>
-                <TitleBar title='几何图形课程列表'/>
+                <TitleBar title={util.getSearchByName("courseTitle")}
+                          rightImgPath='../../../public/static/img/ic_back.png'/>
                 {
                     (result.data && result.data.content.result.res || []).map((item, index) => {
                             return (
-                                <div key={index} id='item-root' onClick={this.onClickLectureItem}>
+                                <div key={index} id='item-root' onClick={() => this.onClickLectureItem(item)}>
                                     <div id='img-root'>
                                         <img id='imgs' src={item.questionPath}/>
                                         <span id='text-time'>{item.videoDuration}</span>

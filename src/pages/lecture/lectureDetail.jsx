@@ -26,7 +26,7 @@ class LectureDetail extends Component {
         let method = "getContentByCurrId";
 
         var contentJson = {
-            "currId": 491,
+            "currId": util.getSearchByName("courseId"),
             "token": "9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF"
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
@@ -57,7 +57,8 @@ class LectureDetail extends Component {
         let {result, videoIndex} = this.state
         return (
             <div>
-                <TitleBar title='几何图形课程详情页' onRightClick={this.callBack} rightText='预览'/>
+                <TitleBar title={util.getSearchByName("courseTitle")} onRightClick={this.callBack}
+                          rightImgPath='../../../public/static/img/ic_back.png'/>
 
                 <VideoContainer res={result.data && result.data.content.result.res[videoIndex]}/>
                 {

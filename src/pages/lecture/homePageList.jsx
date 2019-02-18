@@ -13,8 +13,8 @@ class LectureList extends Component {
         }
     }
 
-    onClickLectureItem = async (courseId) => {
-        util.goForward(`/lectureList`, this)
+    onClickLectureItem = async (item) => {
+        util.goForward(`/lectureList?courseId=${item.courseId}&courseTitle=${item.courseTitle}`, this)
     }
 
     componentDidMount() {
@@ -98,7 +98,7 @@ class LectureList extends Component {
                         {
                             (benzhouFilter||[]).map((item, index) => {
                                 return (
-                                    <div className="listCell" onClick={()=>this.onClickLectureItem(item.courseId)}>
+                                    <div className="listCell" onClick={()=>this.onClickLectureItem(item)}>
                                         <div className="cellImg">
                                             <img className="img" style={{width:'100%'}} src={item.thumbnailPath} alt=""/>
                                             <span className="videoNum">{item.videoNum}段视频</span>
@@ -122,7 +122,7 @@ class LectureList extends Component {
                         {
                             (arrayFilter||[]).map((item, index) => {
                                     return (
-                                        <div className="listCell" onClick={()=>this.onClickLectureItem(item.courseId)}>
+                                        <div className="listCell" onClick={()=>this.onClickLectureItem(item)}>
                                             <div className="cellImg">
                                                 <img className="img" style={{width:'100%'}} src={item.thumbnailPath} alt=""/>
                                                 <span className="videoNum">{item.videoNum}段视频</span>
