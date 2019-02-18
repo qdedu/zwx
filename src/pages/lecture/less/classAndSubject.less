@@ -1,0 +1,71 @@
+#root{
+  display: flex;
+  flex-direction: column;
+}
+
+#title-bar{
+  background-color: #33a8de;
+  height: 44px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+#title{
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+#saveBtn{
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding-right: 10px;
+}
+
+#palaceBtn{
+  font-size: 1.5rem;
+  color: #33a8de;
+  padding-left: 10px;
+}
+
+.selectClassOrType{
+  font-size: 1.3em;
+  padding-left: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #666666;
+}
+
+
+.selectCell{
+  background-color: white;
+  height: 40px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  .name{
+    padding-left: 10px;
+    font-size: 1.3em;
+  }
+  .classDetial{
+    display:flex;
+    padding-right: 10px;
+    align-items:center;
+  }
+  .subType{
+    font-size: 1.3em;
+    padding-right: 5px;
+  }
+  .more{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #c7c7c7;
+    border-right: 2px solid #c7c7c7;
+    position: relative;
+    margin-top: 5px;
+    top: 50%;
+    right: 6px;
+    transform: rotate(45deg) translateY(-50%);
+  }
+}
