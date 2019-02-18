@@ -49,11 +49,15 @@ class LectureDetail extends Component {
     }
 
 
+    callBack = () => {
+        console.log('122121', 111111111)
+    }
+
     render() {
         let {result, videoIndex} = this.state
         return (
             <div>
-                <TitleBar title='几何图形课程详情页'/>
+                <TitleBar title='几何图形课程详情页' onRightClick={this.callBack} rightText='预览'/>
 
                 <VideoContainer res={result.data && result.data.content.result.res[videoIndex]}/>
                 {
