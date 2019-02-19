@@ -63,7 +63,7 @@ class LectureDetail extends Component {
                 <TitleBar
                     onLeftClick={this.leftClick}
                     title={decodeURIComponent(util.getSearchByName("courseTitle"))} onRightClick={this.callBack}
-                    rightImgPath='../../../public/static/img/ic_back.png'/>
+                />
 
                 <VideoContainer res={result.data && result.data.content.result.res[videoIndex]}/>
                 {
