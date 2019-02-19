@@ -57,7 +57,7 @@ class LectureDetail extends Component {
         let {result, videoIndex} = this.state
         return (
             <div>
-                <TitleBar title={util.getSearchByName("courseTitle")} onRightClick={this.callBack}
+                <TitleBar title={decodeURIComponent(util.getSearchByName("courseTitle"))} onRightClick={this.callBack}
                           rightImgPath='../../../public/static/img/ic_back.png'/>
 
                 <VideoContainer res={result.data && result.data.content.result.res[videoIndex]}/>
