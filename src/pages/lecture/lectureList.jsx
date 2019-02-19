@@ -62,7 +62,9 @@ class LectureList extends Component {
         let {result} = this.state
         return (
             <div id='root'>
-                <TitleBar title={decodeURIComponent(util.getSearchByName("courseTitle"))}
+                <TitleBar
+
+                    title={decodeURIComponent(util.getSearchByName("courseTitle"))}
                           rightImgPath='../../../public/static/img/ic_back.png'/>
                 {
                     (result.data && result.data.content.result.res || []).map((item, index) => {

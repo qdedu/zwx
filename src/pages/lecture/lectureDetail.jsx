@@ -50,15 +50,20 @@ class LectureDetail extends Component {
 
 
     callBack = () => {
-        console.log('122121', 111111111)
+
+    }
+    leftClick = () => {
+        console.log('11111111', 111111)
     }
 
     render() {
         let {result, videoIndex} = this.state
         return (
             <div>
-                <TitleBar title={decodeURIComponent(util.getSearchByName("courseTitle"))} onRightClick={this.callBack}
-                          rightImgPath='../../../public/static/img/ic_back.png'/>
+                <TitleBar
+                    onLeftClick={this.leftClick}
+                    title={decodeURIComponent(util.getSearchByName("courseTitle"))} onRightClick={this.callBack}
+                    rightImgPath='../../../public/static/img/ic_back.png'/>
 
                 <VideoContainer res={result.data && result.data.content.result.res[videoIndex]}/>
                 {
