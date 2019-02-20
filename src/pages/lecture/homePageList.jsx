@@ -9,7 +9,8 @@ class LectureList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataList: {}
+            dataList: {},
+            gradeList:{}
         }
     }
 
@@ -17,8 +18,31 @@ class LectureList extends Component {
         util.goForward(`/lectureList?courseId=${item.courseId}&courseTitle=${item.courseTitle}`, this)
     }
 
+    onClickJiaoCai = async () => {
+        console.log('wdasdasdasdasdsadasd')
+        util.goForward(`/classAndSubject`, this)
+    }
+
+
     componentDidMount() {
         this.getZhlInterfaceUnifyEntry()
+        this.getgradeList()
+    }
+
+    getgradeList = async () => {
+        let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
+        let method = "getUserInfoWithZJ";
+
+        var contentJson = {
+            "token":"9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF",
+        }
+        let params = new DoApi.createParamJSON(className, method, contentJson)
+        let result = await Api.getZhlInterfaceUnifyEntry(params)
+
+        this.setState({
+                gradeList:result
+            }
+        )
     }
 
 
@@ -26,9 +50,14 @@ class LectureList extends Component {
         let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
         let method = "getCurrPage";
 
+        let gradeId = 7;
+        if (store.get("gradeId")){
+            gradeId = store.get("gradeId")
+        }
+
         var contentJson = {
             "catalogTfcode":"RJCZ0201",
-            "gradeId":7,
+            "gradeId":gradeId,
             "token":"9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF",
             "currentPage":1,
             "linesPerPage":10000
@@ -56,17 +85,23 @@ class LectureList extends Component {
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)
-        console.log(result.data.content.result.url, 44444)
+        // console.log(result.data.content.result.url, 44444)
         return result.data.content.result.url
     }
 
     render() {
-        let {dataList} = this.state
+        let {dataList,gradeList} = this.state
 
         let myDataList = []
         if (dataList.data){
             myDataList = dataList.data.content.result.list_curr
             console.log(dataList.data.content.result.list_curr,111111);
+        }
+
+        let gradeDataList = []
+        if (gradeList.data){
+            gradeDataList = gradeList.data.content.result.couList
+            console.log(gradeList.data.content.result.couList,88888);
         }
 
         var benzhouFilter = myDataList.filter(function(item) {
@@ -76,6 +111,13 @@ class LectureList extends Component {
         var arrayFilter = myDataList.filter(function(item) {
             return item.isThisWeek == 0;
         });
+        let myTppe = "初中数学人教版";
+        for (let i = 0;i<gradeDataList.length;i++){
+            if(gradeDataList[i].subjectId == 2){
+                myTppe= gradeDataList[i].couPVersinName;
+            }
+        }
+
         // console.log(benzhouFilter,333333);
         // console.log(arrayFilter,22222);
 
@@ -84,8 +126,8 @@ class LectureList extends Component {
 
                 <TitleBar title='数学'/>
 
-                <div className="jiaocaibanben">
-                    <div className="jiaocaiName"><span className="myWordColor">八年级 | 数学人教版</span></div>
+                <div className="jiaocaibanben" onClick={this.onClickJiaoCai}>
+                    <div className="jiaocaiName"><span className="myWordColor">{gradeList.data?gradeList.data.content.result.gradeName:"八年级"} | {myTppe}</span></div>
                     <div className="jinru"><span className="myWordColor">></span></div>
                 </div>
 
