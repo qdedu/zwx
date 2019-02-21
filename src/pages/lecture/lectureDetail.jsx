@@ -27,7 +27,7 @@ class LectureDetail extends Component {
 
         var contentJson = {
             "currId": util.getSearchByName("courseId"),
-            "token": "9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF"
+            "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)

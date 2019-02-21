@@ -34,7 +34,7 @@ class LectureList extends Component {
         let method = "getGradeList";
 
         var contentJson = {
-            "token":"9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF",
+            "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)
@@ -90,7 +90,7 @@ class LectureList extends Component {
 
         var contentJson = {
             "catalogTfcode":restr,
-            "token":"9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF",
+            "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
 
@@ -135,7 +135,7 @@ class LectureList extends Component {
         let method = "getUserInfoWithZJ";
 
         var contentJson = {
-            "token":"9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF",
+            "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)
@@ -166,7 +166,7 @@ class LectureList extends Component {
 
         var contentJson = {
             "gradeId":mGid,
-            "token":"9F5336D314F887F46834B0C6A0EE4C7064FC8880E17A43508C8A9A8B93B1495A801A35BF2CD1F1B452FDB19EC0FD61DF",
+            "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
 
@@ -232,7 +232,7 @@ class LectureList extends Component {
         console.log(result.data.content.result,'66666666');
 
         this.setState({
-            dataList:result
+                dataList:result
             }
         )
     }
@@ -256,7 +256,7 @@ class LectureList extends Component {
 
         var couList = [];
         if (myDataList){
-           couList = myDataList.couInfo;
+            couList = myDataList.couInfo;
 
         }
         let isFinded = false
