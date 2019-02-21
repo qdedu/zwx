@@ -16,7 +16,7 @@ class LectureList extends Component {
     onClickLectureItem = async (myTtem) => {
         // store.clear()
         store.set(util.getSearchByName("gradeId")+util.getSearchByName("subjectId"),myTtem.versionTfCode)
-        util.goForward(`/classAndSubject?gradeId=${util.getSearchByName("gradeId")}&gradeName=${util.getSearchByName("gradeName")}&subjectId=${util.getSearchByName("subjectId")}&versionTfCode=${myTtem.versionTfCode}`, this)
+        window.history.back()
 
     }
 

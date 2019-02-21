@@ -3,6 +3,7 @@ import './less/classAndSubject.less'
 import Api from '../../api/api'
 import DoApi from "../../utils/axios/DoApi";
 import TitleBar from '../../components/titlebar/TitleBar'
+// import store from "../../redux/store";
 
 class LectureList extends Component {
 
@@ -52,16 +53,9 @@ class LectureList extends Component {
 
         if (!this.state.dataList){return}
         let marr = [];
-        let mGid = 7;
-        // console.log(,3333333)
-        console.log(this.state.resultList.data.content.result,3333333)
-        if (util.getSearchByName("gradeId")) {
-            mGid = util.getSearchByName("gradeId")
 
-        }else {
-            mGid = this.state.resultList.data.content.result.gradeId
-        }
-        store.set("gradeId",mGid)
+        console.log(this.state.resultList.data.content.result,3333333)
+
         if(this.state.dataList.data.content.result.couInfo){
             for (let i = 0; i < this.state.dataList.data.content.result.couInfo.length; i++) {
                 let isSelected = false;
@@ -111,16 +105,7 @@ class LectureList extends Component {
     }
 
     async tapLeftClick(){
-        let mGid = 7;
 
-        console.log(this.state.resultList.data.content.result,3333333)
-        if (util.getSearchByName("gradeId")) {
-            mGid = util.getSearchByName("gradeId")
-
-        }else {
-            mGid = this.state.resultList.data.content.result.gradeId
-        }
-        store.set("gradeId",mGid)
         if(this.state.dataList.data.content.result.couInfo){
             for (let i = 0; i < this.state.dataList.data.content.result.couInfo.length; i++) {
                 let isSelected = false;
@@ -139,7 +124,8 @@ class LectureList extends Component {
             }
         }
 
-        util.goForward(`/homePageList`, this)
+        window.history.back()
+
     }
 
 
@@ -158,7 +144,6 @@ class LectureList extends Component {
                 resultList:result
             }
         )
-
         this.getZhlInterfaceUnifyEntry()
     }
 
@@ -169,10 +154,13 @@ class LectureList extends Component {
         let mGid = 7;
         // console.log(,3333333)
         // console.log(this.state.resultList.data.content.result,3333333)
-        if (util.getSearchByName("gradeId")) {
-            mGid = util.getSearchByName("gradeId")
+
+        if (store.get("gradeId")) {
+            mGid = store.get("gradeId")
 
         }else {
+            store.set("gradeId",this.state.resultList.data.content.result.gradeId)
+            store.set("gradeName",this.state.resultList.data.content.result.gradeName)
             mGid = this.state.resultList.data.content.result.gradeId
         }
 
@@ -252,6 +240,7 @@ class LectureList extends Component {
 
     render() {
         let {dataList,resultList} = this.state
+        console.log(store.get("gradeId111"))
 
         let myDataList = {}
         let resList = {}
@@ -279,11 +268,7 @@ class LectureList extends Component {
                 <div className="bbselectCell" onClick={()=>this.onClickLectureItem()}>
                     <span className="name">年级</span>
                     <div className="classDetial">
-                        <span className="subType">{
-
-                            util.getSearchByName("gradeName")?decodeURIComponent(util.getSearchByName("gradeName")):resList.gradeName
-                            //
-                        }</span>
+                        <span className="subType">{store.get("gradeName")}</span>
                         <span className="more"></span>
                     </div>
                 </div>

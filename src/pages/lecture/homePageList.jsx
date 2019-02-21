@@ -124,7 +124,7 @@ class LectureList extends Component {
         return (
             <div id='root'>
 
-                <TitleBar title='数学'/>
+                <TitleBar title='数学' isCanBack={false}/>
 
                 <div className="jiaocaibanben" onClick={this.onClickJiaoCai}>
                     <div className="jiaocaiName"><span className="myWordColor">{gradeList.data?gradeList.data.content.result.gradeName:"八年级"} | {myTppe}</span></div>
