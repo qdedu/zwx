@@ -40,7 +40,7 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                助我学h5版
+
             </div>
         )
     }
