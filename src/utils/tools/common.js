@@ -1,4 +1,5 @@
 import matchExcerciseApi from 'api/homework/MatchExcercise'
+
 const jsonStr = () => {
     return JSON.stringify
 }
@@ -12,49 +13,49 @@ const wordCount = (content) => {
     return $("<div>" + content + "</div>").text().length
 }
 
-const fetchEditions = async (subjectId,navigationCode) => {
-    let params={
-        termId:util.getTermId() || 2,
+const fetchEditions = async (subjectId, navigationCode) => {
+    let params = {
+        termId: util.getTermId() || 2,
         subjectId
     }
     let editions = await matchExcerciseApi.fetchEditions(params)
-    let editionItem = editions.filter((item)=>{
-        return item.tfcode== navigationCode.slice(0,8)
+    let editionItem = editions.filter((item) => {
+        return item.tfcode == navigationCode.slice(0, 8)
     })
     return editionItem[0].id
 }
 
-const fetchBooks = async (editionId,navigationCode) => {
+const fetchBooks = async (editionId, navigationCode) => {
     let books = await matchExcerciseApi.fetchBooks({
         editionId
     })
-    let bookItem = books.filter((item)=>{
-        return  item.tfcode === navigationCode.slice(0,10);
+    let bookItem = books.filter((item) => {
+        return item.tfcode === navigationCode.slice(0, 10);
     })
     return bookItem
 }
 
-const fetchChapters = async (bookItem,navigationCode) => {
+const fetchChapters = async (bookItem, navigationCode) => {
     let chapters = await matchExcerciseApi.fetchChapters({
-        bookId:bookItem[0].id
+        bookId: bookItem[0].id
     })
-    let chaptersItem = chapters[0].children.filter((item)=>{
-        return item.tfcode === navigationCode.slice(0,12);
+    let chaptersItem = chapters[0].children.filter((item) => {
+        return item.tfcode === navigationCode.slice(0, 12);
     })
-    let selectChapter =chaptersItem[0].children && chaptersItem[0].children.filter((item)=>{
-        return item.tfcode ===navigationCode.slice(0,14)
+    let selectChapter = chaptersItem[0].children && chaptersItem[0].children.filter((item) => {
+        return item.tfcode === navigationCode.slice(0, 14)
     })
-    console.log("sleel",selectChapter)
-    let lastChapter =selectChapter!=undefined && !!selectChapter.length && selectChapter[0].children && selectChapter[0].children.filter((item)=>{
-        return item.tfcode ===navigationCode.slice(0,16)
+    console.log("sleel", selectChapter)
+    let lastChapter = selectChapter != undefined && !!selectChapter.length && selectChapter[0].children && selectChapter[0].children.filter((item) => {
+        return item.tfcode === navigationCode.slice(0, 16)
     })
-    console.log("chapter",chapters,chaptersItem,selectChapter,lastChapter)
+    console.log("chapter", chapters, chaptersItem, selectChapter, lastChapter)
     return {
-        selectBookName:bookItem[0].name,
-        selectChapterName:(lastChapter && !!lastChapter.length && lastChapter[0].name) ||
-        (selectChapter && !!selectChapter.length && selectChapter[0].name) ||
-        (chaptersItem && !!chaptersItem.length && chaptersItem[0].name),
-        selectBookId : bookItem[0].id,
+        selectBookName: bookItem[0].name,
+        selectChapterName: (lastChapter && !!lastChapter.length && lastChapter[0].name) ||
+            (selectChapter && !!selectChapter.length && selectChapter[0].name) ||
+            (chaptersItem && !!chaptersItem.length && chaptersItem[0].name),
+        selectBookId: bookItem[0].id,
     }
 }
 
@@ -114,7 +115,6 @@ const hasSendFlower = function (data, userId) {
 }
 
 
-
 /*
  * json转成url格式
  * 中文encode
@@ -153,7 +153,6 @@ const jsonUrlFormat = function (data) {
 }
 
 
-
 /*
  * 处理post请求,application/json格式传参
  * 封装 data
@@ -186,15 +185,15 @@ const encapDataForm = function (params) {
  * 处理post请求，简单encode封装
  */
 
-const doJson = function(params) {
-	return params
+const doJson = function (params) {
+    return params
 }
 
-const getDeviceType = function(){
+const getDeviceType = function () {
     let userAgent = window.navigator.userAgent
     let isAndroid = userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1
     let isIOS = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
-    let isBrowser = (!isAndroid && !isIOS)?true:false
+    let isBrowser = (!isAndroid && !isIOS) ? true : false
     return {
         isAndroid,
         isIOS,
@@ -203,38 +202,38 @@ const getDeviceType = function(){
 }
 
 
-const getMD5 = function(str) {
-	return hex_md5(str);
+const getMD5 = function (str) {
+    return hex_md5(str);
 }
 
-const getMd5Key = function(o, token) {
-	o.token = token;
-	var tfeduKey = '[tfedu]';
-	var key, a = [];
-	var values = '';
+const getMd5Key = function (o, token) {
+    o.token = token;
+    var tfeduKey = '[tfedu]';
+    var key, a = [];
+    var values = '';
 
-	for(key in o) {
-		if(o.hasOwnProperty(key)) {
-			a.push(key);
-		}
-	}
-	a.sort();
-	// 取出 排序好的 其中的值 拼成 待加密字符串
-	for(key = 0; key < a.length; key++) {
-		// 处理value未定义等
-		if(o[a[key]] == undefined) {
-			o[a[key]] = '';
-		}
-		values += o[a[key]] + tfeduKey
-	}
-	// 最后加上 appKey
-	values += window.appKey
-		// 	console.log(o, values)
-	return getMD5(values)
+    for (key in o) {
+        if (o.hasOwnProperty(key)) {
+            a.push(key);
+        }
+    }
+    a.sort();
+    // 取出 排序好的 其中的值 拼成 待加密字符串
+    for (key = 0; key < a.length; key++) {
+        // 处理value未定义等
+        if (o[a[key]] == undefined) {
+            o[a[key]] = '';
+        }
+        values += o[a[key]] + tfeduKey
+    }
+    // 最后加上 appKey
+    values += window.appKey
+    // 	console.log(o, values)
+    return getMD5(values)
 }
 
 // 获取用户id
-const getUserId = function(){
+const getUserId = function () {
     // Cookies.get('userId') ||
     return Cookies.get('userId') || store.get('userInfo') && store.get('userInfo').user.userId
 }
@@ -244,21 +243,21 @@ const getTermId = function () {
 }
 
 // 根据ID查找班级
-const getClassName = function(id,data){
+const getClassName = function (id, data) {
 
-    if(data.__proto__.construtor == Array) {
-        let theClass = data.find((item)=>{
-            if(item.id == id){
+    if (data.__proto__.construtor == Array) {
+        let theClass = data.find((item) => {
+            if (item.id == id) {
                 return true
             }
         })
         return theClass && theClass.name
     }
-    
+
 }
 
 /**获取用户角色 */
-const getRoles = function(){
+const getRoles = function () {
     let id = store.get('userInfo') && store.get('userInfo').user && store.get('userInfo').user.roleList[0].id
     return {
         isStudent: id == 1,
@@ -267,7 +266,7 @@ const getRoles = function(){
     }
 }
 
-const getRoleId = function(){
+const getRoleId = function () {
     let id = store.get('userInfo') && store.get('userInfo').user && store.get('userInfo').user.roleList[0].id
     return id
 }
@@ -293,12 +292,12 @@ const Rules = {
  * @param data {a:1,b:2}
  * @param rules:{title:{name:'abc',required:true}}
  */
-const checkRules = function (data,rules=Rules) {
+const checkRules = function (data, rules = Rules) {
     console.log(data, rules)
     for (let rule in rules) {
         if (rules[rule].required) {
             if (!data[rule] || (data[rule] instanceof Array && !data[rule].length)) {
-                dsBridge.call("showToast", { data: `${rules[rule].name}不能为空` })
+                dsBridge.call("showToast", {data: `${rules[rule].name}不能为空`})
                 return false
             }
         }
@@ -307,50 +306,50 @@ const checkRules = function (data,rules=Rules) {
 }
 
 // 获取学科列表
-const getSubjectList = function(){
+const getSubjectList = function () {
     return store.get('subjectList') || []
 }
 
 // 获取班级列表
-const getClassList = function() {
+const getClassList = function () {
     return store.get('classList') || []
 }
 
 // 获取班级Id列表
-const getClassIdList = function() {
+const getClassIdList = function () {
     let classList = getClassList()
-    return classList.reduce(function(arr,item){
+    return classList.reduce(function (arr, item) {
         return arr.concat(item.id)
-    },[])
+    }, [])
 }
 
 // 是否是学科Id
-const isSubjectId = function(id){
-   let subjectList = getSubjectList()
-   let theSubject = subjectList.find((item)=>item.subjectId == id)
-   return !!theSubject
+const isSubjectId = function (id) {
+    let subjectList = getSubjectList()
+    let theSubject = subjectList.find((item) => item.subjectId == id)
+    return !!theSubject
 }
 
 
 //根据学科id获取学科名称
-const getSubjectName = function(id){
-   let subjectList = getSubjectList()
-   let theSubject = subjectList.find((item)=>item.id == id)
-   return theSubject
+const getSubjectName = function (id) {
+    let subjectList = getSubjectList()
+    let theSubject = subjectList.find((item) => item.id == id)
+    return theSubject
 }
 
 //  根据班级Id获取班级名称
-const getClassNameById = function(id){
-   let classList = getClassList()
-   let theClass = classList.find((item)=>item.id == id)
-   return theClass.className
+const getClassNameById = function (id) {
+    let classList = getClassList()
+    let theClass = classList.find((item) => item.id == id)
+    return theClass.className
 }
 
 // 同上
-const isClassId = function(id){
-   let classList = getClassList()
-   let theClass = classList.find((item)=>item.id == id)
-   return !!theClass
+const isClassId = function (id) {
+    let classList = getClassList()
+    let theClass = classList.find((item) => item.id == id)
+    return !!theClass
 }
 
 /**
@@ -358,11 +357,11 @@ const isClassId = function(id){
  * @param {*} url 相对路径
  * @param {*} context this
  */
-const goForward = function(url,context) {
+const goForward = function (url, context) {
     let originUrl = location.origin + location.pathname + '#'
-    if(getDeviceType().isBrowser){
+    if (getDeviceType().isBrowser) {
         context.props.history.push(url)
-    }else{
+    } else {
         dsBridge.call("openNewPage", {
             "data": originUrl + url
         });
@@ -377,23 +376,23 @@ const goForward = function(url,context) {
  * @param {*} callback 页面返回触发的回调函数
  * @param {*} context this
  */
-const goBackward = function(url,eventName,param,callback,context) {
-    if(getDeviceType().isBrowser){
+const goBackward = function (url, eventName, param, callback, context) {
+    if (getDeviceType().isBrowser) {
         context.props.history.push({
             pathname: url,
             search: `?${jsonUrlFormat(param)}`
         })
-        callback.apply(context,param)
-    }else{
+        callback.apply(context, param)
+    } else {
         dsBridge.register(eventName,
-            function(param) {
+            function (param) {
                 dsBridge.call("closeCurrPage");
-                callback.apply(context,param)
+                callback.apply(context, param)
             }
         )
         dsBridge.call("sendEvent", {
-            "tag": "file:///android_asset/jsbridge.html", 
-            "event": eventName, 
+            "tag": "file:///android_asset/jsbridge.html",
+            "event": eventName,
             "args": param
         })
     }
@@ -410,23 +409,23 @@ const getDate = (date = new Date().getTime()) => {
 }
 
 // 根据日期判断是否同一天
-const isInTheSameDay = (date1,date2) => {
+const isInTheSameDay = (date1, date2) => {
     let year1 = getYear(date1)
     let month1 = getMonth(date1)
     let day1 = getDate(date1)
     let year2 = getYear(date2)
     let month2 = getMonth(date2)
     let day2 = getDate(date2)
-    if(year1 == year2 && month1 == month2 && day1 == day2){
+    if (year1 == year2 && month1 == month2 && day1 == day2) {
         return true
-    }else{
+    } else {
         return false
     }
 }
 
 //判断是否是数组
-const isNullArray = function(data){
-    if(data instanceof Array && !data.length){
+const isNullArray = function (data) {
+    if (data instanceof Array && !data.length) {
         return true
     }
     return false
@@ -434,14 +433,14 @@ const isNullArray = function(data){
 
 // 判断是否是空对象
 const isNullObject = function (data) {
-    if (Object.prototype.toString.call(data) == '[object Object]' && !Object.keys(data).length){
+    if (Object.prototype.toString.call(data) == '[object Object]' && !Object.keys(data).length) {
         return true
     }
     return false
 }
 
-const loop = function(data,index){
-    if(index>=1){
+const loop = function (data, index) {
+    if (index >= 1) {
         if (data[index] === data[index - 1]) {
             data.splice(index, 1);
         }
@@ -450,27 +449,27 @@ const loop = function(data,index){
 }
 
 // 数组去重和排序
-const uniqueAndSort = function(arr=[],sortField,isUp){
+const uniqueAndSort = function (arr = [], sortField, isUp) {
     let len = arr.length
-        arr.sort((a,b)=>a[sortField]-b[sortField])
-    loop(arr,len-1)
+    arr.sort((a, b) => a[sortField] - b[sortField])
+    loop(arr, len - 1)
     return arr
 }
 
 // json数组根据发布时间排序
-const sortByReleaseTime = function (arr, time ='releaseTime'){
+const sortByReleaseTime = function (arr, time = 'releaseTime') {
     arr.sort((a, b) => new Date(b[time]).getTime() - new Date(a[time]).getTime())
     return arr
 }
 
 //将时间戳或格林时间转成 年-月-日 时:分:秒 时间格式默认:'yyyy-MM-dd HH:mm:ss'
-const formatTime = function(time, format='yyyy-MM-dd HH:mm:ss') {
+const formatTime = function (time, format = 'yyyy-MM-dd HH:mm:ss') {
     let datetime
-    if(!!time){
+    if (!!time) {
         datetime = new Date(Date.parse(time));
     }
 
-    if(datetime == 'Invalid Date' || !datetime) return false
+    if (datetime == 'Invalid Date' || !datetime) return false
 
     let year = datetime.getFullYear();
     let month = datetime.getMonth();
@@ -478,39 +477,39 @@ const formatTime = function(time, format='yyyy-MM-dd HH:mm:ss') {
     let hour = datetime.getHours();
     let minute = datetime.getMinutes();
     let second = datetime.getSeconds();
-    if(/yyyy/.test(format)) {
+    if (/yyyy/.test(format)) {
         format = format.replace(/yyyy/, year);
     }
-    if(/MM/.test(format)) {
-        if((month + 1) < 10) {
+    if (/MM/.test(format)) {
+        if ((month + 1) < 10) {
             format = format.replace(/MM/, '0' + (month + 1));
         } else {
             format = format.replace(/MM/, (month + 1));
         }
     }
-    if(/dd/.test(format)) {
-        if(date < 10) {
+    if (/dd/.test(format)) {
+        if (date < 10) {
             format = format.replace(/dd/, '0' + date);
         } else {
             format = format.replace(/dd/, date);
         }
     }
-    if(/HH/.test(format)) {
-        if(hour < 10) {
+    if (/HH/.test(format)) {
+        if (hour < 10) {
             format = format.replace(/HH/, '0' + hour);
         } else {
             format = format.replace(/HH/, hour);
         }
     }
-    if(/mm/.test(format)) {
-        if(minute < 10) {
+    if (/mm/.test(format)) {
+        if (minute < 10) {
             format = format.replace(/mm/, '0' + minute);
         } else {
             format = format.replace(/mm/, minute);
         }
     }
-    if(/ss/.test(format)) {
-        if(second < 10) {
+    if (/ss/.test(format)) {
+        if (second < 10) {
             format = format.replace(/ss/, '0' + second);
         } else {
             format = format.replace(/ss/, second);
@@ -520,7 +519,7 @@ const formatTime = function(time, format='yyyy-MM-dd HH:mm:ss') {
 }
 
 // 显示星期几
-const showWeek = function(date){
+const showWeek = function (date) {
     let weekNumber = new Date(date).getDay()
     let enumber = {
         '0': '星期日',
@@ -535,20 +534,20 @@ const showWeek = function(date){
 }
 
 // 将时间显示成今天/昨天/前天 或者月-日，或者年-月-日或者周几
-const showTodayYesterdy = function(date,format){
+const showTodayYesterdy = function (date, format) {
     let createDate = new Date(date)
-    createDate=isWhichDay(createDate)
-    if(!!format && format != 'week'){
+    createDate = isWhichDay(createDate)
+    if (!!format && format != 'week') {
 
-        createDate+=formatTime(date,"HH:mm")
+        createDate += formatTime(date, "HH:mm")
     }
-    if (!!format && format == 'week'){
-        createDate+= ' ' + showWeek(date)
+    if (!!format && format == 'week') {
+        createDate += ' ' + showWeek(date)
     }
     return createDate
 }
 
-const isWhichDay=function(date){
+const isWhichDay = function (date) {
     let createDate = new Date(date)
     if (createDate == 'Invalid Date') return
     let currentDate = new Date()
@@ -565,44 +564,44 @@ const isWhichDay=function(date){
         createDate = "昨天 "
     } else if (difftime2 < (difftime1 + 3600 * 24 * 2)) {
         createDate = "前天 "
-    }else if(createDate.getFullYear()==currentDate.getFullYear()){
-        createDate=formatTime(date, "MM-dd")
-    }else{
-        createDate=formatTime(date, "yyyy-MM-dd")
+    } else if (createDate.getFullYear() == currentDate.getFullYear()) {
+        createDate = formatTime(date, "MM-dd")
+    } else {
+        createDate = formatTime(date, "yyyy-MM-dd")
     }
     return createDate
 }
 
 //处理今天昨天前天 format="yyyy-MM-dd HH:mm:ss"
 //2018-09-07 14:19:16  --- 今天/昨天/前天 14:19
-const showDayAndHHmm=function(value,format){
-    if(!value) return
+const showDayAndHHmm = function (value, format) {
+    if (!value) return
     let valueFormat;
-    if(/-/.test(value)){
+    if (/-/.test(value)) {
         valueFormat = value.replace(/-/gi, "/")
-    }else{
+    } else {
         valueFormat = value
     }
-    return showTodayYesterdy(valueFormat,format)
+    return showTodayYesterdy(valueFormat, format)
 }
 
 //2018-09-07 14:19:16  --- 09月07日
-const showMonthDay=function(value,format="HH:mm"){
-    if(!value) return
+const showMonthDay = function (value, format = "HH:mm") {
+    if (!value) return
     let valueFormat;
-    if(/-/.test(value)){
+    if (/-/.test(value)) {
         valueFormat = value.replace(/-/gi, "/")
-    }else{
+    } else {
         valueFormat = value
     }
-    return formatTime(valueFormat,format)
+    return formatTime(valueFormat, format)
 }
 
-const addProperty = function(target, json){
-    return Object.assign(target,json)
+const addProperty = function (target, json) {
+    return Object.assign(target, json)
 }
 
-const decode = function(str){
+const decode = function (str) {
     return decodeURIComponent(str)
 }
 
@@ -611,10 +610,10 @@ const decode = function(str){
  * @param {*} context this
  * @param {*} json 修改后的key-value对
  */
-const setState = function(context,json){
+const setState = function (context, json) {
     context.setState((prevState) => {
-        for( let i in json ){
-            Object.assign(prevState,{[i]:json[i]})
+        for (let i in json) {
+            Object.assign(prevState, {[i]: json[i]})
         }
         return prevState
     })
@@ -624,34 +623,34 @@ const setState = function(context,json){
  * 根据url参数数组，获取对应对象
  * eg.  getParams(['a','b']) => {a,b}
  */
-const getParams = (function(){
+const getParams = (function () {
     let tempObj = {}
-    return function (params){
-        for(let i of params){
+    return function (params) {
+        for (let i of params) {
             let key = i, value = util.getSearchByName(i)
-            if(/\,/.test(value)){
+            if (/\,/.test(value)) {
                 value = value.split(',')
             }
-            Object.assign(tempObj,{[key]:value})
-        } 
-        return tempObj  
+            Object.assign(tempObj, {[key]: value})
+        }
+        return tempObj
     }
 })()
 
 // 格林时间转成年-月-日 时:分:秒
-const GMTToStr = function(time){
+const GMTToStr = function (time) {
     let date = new Date(time)
-    let Str=date.getFullYear() + '-' +
-    (date.getMonth() + 1) + '-' + 
-    date.getDate() + ' ' + 
-    date.getHours() + ':' + 
-    date.getMinutes() + ':' + 
-    date.getSeconds()
+    let Str = date.getFullYear() + '-' +
+        (date.getMonth() + 1) + '-' +
+        date.getDate() + ' ' +
+        date.getHours() + ':' +
+        date.getMinutes() + ':' +
+        date.getSeconds()
     return Str
 }
 
 //  处理时间分组
-const firstDataHandle = function(list){
+const firstDataHandle = function (list) {
     if (!list) return
     list.forEach((item) => {
         item.isFirst = true
@@ -660,8 +659,8 @@ const firstDataHandle = function(list){
     followArray.forEach((item, i) => {
         let firstTime = list[i].releaseTime || list[i].createTime
         let followTime = item.releaseTime || item.createTime
-        if(firstTime.split(" ")[0]==followTime.split(" ")[0]){
-            item.isFirst=false
+        if (firstTime.split(" ")[0] == followTime.split(" ")[0]) {
+            item.isFirst = false
         }
         // if (firstTime && followTime) {
         //     if (formatTime(firstTime, "yyyy-MM-dd") == formatTime(followTime, "yyyy-MM-dd")) {
@@ -676,21 +675,21 @@ const firstDataHandle = function(list){
 
 /** 上下 学期处理
  * year string 班级级数，eg. 2014
-* return [] 处理后的学期数组
-*/
-const doSemester = function (year){
+ * return [] 处理后的学期数组
+ */
+const doSemester = function (year) {
     var date = new Date();
     //学期列表
     var semesterlist = [];
-    for(var i = 0; i < 6; i++) {
+    for (var i = 0; i < 6; i++) {
         var semester = {};
-        if(parseInt(date.getMonth())+1 >= 8) {
-            semester.sem = date.getFullYear() + "-" + (date.getFullYear() + 1 )+ "上学期";
+        if (parseInt(date.getMonth()) + 1 >= 8) {
+            semester.sem = date.getFullYear() + "-" + (date.getFullYear() + 1) + "上学期";
             semester.sem_begin = date.getFullYear() + "-08-01";
             semester.sem_end = date.getFullYear() + 1 + "-01-31";
             semester.id = i;
-        } else if(parseInt(date.getMonth())+1 >= 2 && parseInt(date.getMonth())+1 < 8) {
-            if(year != '' && year >= date.getFullYear())
+        } else if (parseInt(date.getMonth()) + 1 >= 2 && parseInt(date.getMonth()) + 1 < 8) {
+            if (year != '' && year >= date.getFullYear())
                 break;
             semester.sem = date.getFullYear() - 1 + "-" + date.getFullYear() + "下学期";
             semester.sem_begin = date.getFullYear() + "-02-01";
@@ -711,54 +710,56 @@ const doSemester = function (year){
     return semesterlist;
 }
 
-const initBar = function (content,btnright,event) {
+const initBar = function (content, btnright, event) {
     let data = {
         "toolbar":
             {
                 "visible": "true",
                 "title": {
-                    "content":content,
+                    "content": content,
                     "textsize": "12",
                     "textcolor": "#ffffff"
                 },
                 "btnright": {
-                    "name":btnright,
+                    "name": btnright,
                     "data": event,
                     "newpage": "false"
                 },
-             }
-        }
+            }
+    }
     dsBridge.call("initWebPage", data);
 }
 
-const toDoubble=function(num){
-    return num<10?"0"+num:num
+const toDoubble = function (num) {
+    return num < 10 ? "0" + num : num
 }
 //   100————1'40"
-const changeTime = function(time){
-    if(!time){
-      return 0;
+const changeTime = function (time) {
+    if (!time) {
+        return 0;
     }
-    let hour,min,sec,createDate=time
-    hour=parseInt(createDate/60/60)
-    min=parseInt((createDate-hour*3600)/60)
-    sec=parseInt(createDate-(hour*3600+min*60))
-    if(hour>0){
-        createDate=hour+'h'+min+'′'+sec+'″'
-    }else if(min>0){
-        createDate=min+'′'+sec+'″'
-    }else if(sec>0){
-        createDate=sec+'″'
+    let hour, min, sec, createDate = time
+    hour = parseInt(createDate / 60 / 60)
+    min = parseInt((createDate - hour * 3600) / 60)
+    sec = parseInt(createDate - (hour * 3600 + min * 60))
+    if (hour > 0) {
+        createDate = hour + 'h' + min + '′' + sec + '″'
+    } else if (min > 0) {
+        createDate = min + '′' + sec + '″'
+    } else if (sec > 0) {
+        createDate = sec + '″'
     }
     return createDate
 }
 
-const getResIcon = function(img) {
+const getResIcon = function (img) {
     let fileExt = img.alt.split('.')[1]
     img.src = 'static/img/resicon/' + fileExt + '.png'
 }
 
-
+const getToken = function () {
+    return sessionStorage.getItem('token')
+}
 const util = {
     jsonStr,
     jsonObj,
@@ -809,7 +810,8 @@ const util = {
     fetchChapters,
     initBar,
     changeTime,
-    getResIcon
+    getResIcon,
+    getToken,
 }
 
 window.getMd5Key = getMd5Key
