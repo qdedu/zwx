@@ -16,7 +16,7 @@ class LectureList extends Component {
     }
 
     onClickLectureItem = async () => {
-        util.goForward(`/selectGrade`, this)
+        util.goForward(`/selectGrade?subjectId=${util.getSearchByName("subjectId")}`, this)
     }
 
     onClickbanbenItem = async (item) => {
@@ -69,6 +69,8 @@ class LectureList extends Component {
                 let isSelected = false;
                 if (this.state.dataList.data.content.result.couInfo[i].version) {
                     for (let j = 0; j < this.state.dataList.data.content.result.couInfo[i].version.length; j++) {
+                if (this.state.dataList.data.content.result.couInfo[i].version && this.state.dataList.data.content.result.couInfo[i].subjectId == util.getSearchByName("subjectId")){
+                    for (let j = 0; j < this.state.dataList.data.content.result.couInfo[i].version.length;j++){
 
                         for (let m = 0; m < this.state.gradeList.data.content.result.length; m++) {
                             store.remove(`${this.state.gradeList.data.content.result[m].gradeId}` + `${this.state.dataList.data.content.result.couInfo[i].subjectId}`)
@@ -264,8 +266,8 @@ class LectureList extends Component {
         }
 
         var couList = [];
-        if (myDataList) {
-            couList = myDataList.couInfo;
+        if (myDataList){
+           couList = myDataList.couInfo;
 
         }
         let isFinded = false
