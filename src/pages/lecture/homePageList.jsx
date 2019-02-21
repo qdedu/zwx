@@ -20,7 +20,7 @@ class LectureList extends Component {
 
     onClickJiaoCai = async () => {
         console.log('wdasdasdasdasdsadasd')
-        util.goForward(`/classAndSubject`, this)
+        util.goForward(`/classAndSubject?subjectId=2`, this)
     }
 
 

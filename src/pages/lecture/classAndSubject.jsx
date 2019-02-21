@@ -16,7 +16,7 @@ class LectureList extends Component {
     }
 
     onClickLectureItem = async () => {
-        util.goForward(`/selectGrade`, this)
+        util.goForward(`/selectGrade?subjectId=${util.getSearchByName("subjectId")}`, this)
     }
 
     onClickbanbenItem = async (item) => {
@@ -65,7 +65,7 @@ class LectureList extends Component {
         if(this.state.dataList.data.content.result.couInfo){
             for (let i = 0; i < this.state.dataList.data.content.result.couInfo.length; i++) {
                 let isSelected = false;
-                if (this.state.dataList.data.content.result.couInfo[i].version){
+                if (this.state.dataList.data.content.result.couInfo[i].version && this.state.dataList.data.content.result.couInfo[i].subjectId == util.getSearchByName("subjectId")){
                     for (let j = 0; j < this.state.dataList.data.content.result.couInfo[i].version.length;j++){
 
                         for (let m = 0;m < this.state.gradeList.data.content.result.length;m++){
@@ -236,7 +236,7 @@ class LectureList extends Component {
 
 
         var arrayFilter = result.data.content.result.couInfo.filter(function(item) {
-            return item.version != null;
+            return (item.version != null && item.subjectId == util.getSearchByName("subjectId"));
         });
         // localStorage.setItem("subjectbnabenlist"+mGid,{})
 

@@ -14,7 +14,7 @@ class LectureList extends Component {
     }
 
     onClickLectureItem = async (item) => {
-        util.goForward(`/classAndSubject?gradeId=${item.gradeId}&gradeName=${item.gradeName}`, this)
+        util.goForward(`/classAndSubject?gradeId=${item.gradeId}&gradeName=${item.gradeName}&subjectId=${util.getSearchByName("subjectId")}`, this)
     }
 
     componentDidMount() {
