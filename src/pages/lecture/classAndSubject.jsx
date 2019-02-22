@@ -101,7 +101,7 @@ class LectureList extends Component {
         this.setState({
             }
         )
-        util.goForward(`/homePageList`, this)
+        window.history.back()
     }
 
     async tapLeftClick(){
