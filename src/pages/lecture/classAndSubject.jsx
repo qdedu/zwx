@@ -3,7 +3,8 @@ import './less/classAndSubject.less'
 import Api from '../../api/api'
 import DoApi from "../../utils/axios/DoApi";
 import TitleBar from '../../components/titlebar/TitleBar'
-// import store from "../../redux/store";
+
+export default LectureList;
 
 class LectureList extends Component {
 
@@ -16,10 +17,12 @@ class LectureList extends Component {
         }
     }
 
+    //选择年级
     onClickLectureItem = async () => {
         util.goForward(`/selectGrade?subjectId=${util.getSearchByName("subjectId")}`, this)
     }
 
+    //选择教材版本
     onClickbanbenItem = async (item) => {
         util.goForward(`/selectSubject?gradeId=${util.getSearchByName("gradeId")?util.getSearchByName("gradeId"):this.state.resultList.data.content.result.gradeId}&gradeName=${util.getSearchByName("gradeName")?util.getSearchByName("gradeName"):this.state.resultList.data.content.result.gradeName}&subjectId=${item.subjectId}`, this)
     }
@@ -29,6 +32,7 @@ class LectureList extends Component {
         this.getgradeList()
     }
 
+    //获取所有年级列表
     getgradeList = async () => {
         let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
         let method = "getGradeList";
@@ -47,35 +51,41 @@ class LectureList extends Component {
     }
 
 
+    /*保存*/
     async tapRightClick(){
         let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
         let method = "SaveUserInfo";
 
         if (!this.state.dataList){return}
-        let marr = [];
+        let marr = []
+        let dataArr = []
+        let gradeList = []
 
-        console.log(this.state.resultList.data.content.result,3333333)
+        if (this.state.dataList.data){
+            dataArr = this.state.dataList.data.content.result.couInfo
+        }
+        if (this.state.gradeList.data){
+            gradeList=this.state.gradeList.data.content.result
+        }
 
-        if(this.state.dataList.data.content.result.couInfo){
-            for (let i = 0; i < this.state.dataList.data.content.result.couInfo.length; i++) {
-                let isSelected = false;
-                if (this.state.dataList.data.content.result.couInfo[i].version && this.state.dataList.data.content.result.couInfo[i].subjectId == util.getSearchByName("subjectId")){
-                    for (let j = 0; j < this.state.dataList.data.content.result.couInfo[i].version.length;j++){
+        for (let i = 0; i < dataArr.length; i++) {
+            let isSelected = false;
+            if (dataArr[i].version && dataArr[i].subjectId == util.getSearchByName("subjectId")){
+                for (let j = 0; j < dataArr[i].version.length;j++){
 
-                        for (let m = 0;m < this.state.gradeList.data.content.result.length;m++){
-                            store.remove(`${this.state.gradeList.data.content.result[m].gradeId}`+`${this.state.dataList.data.content.result.couInfo[i].subjectId}`)
+                    for (let m = 0;m < gradeList.length;m++){
+                        store.remove(`${gradeList[m].gradeId}`+`${dataArr[i].subjectId}`)
 
-                        }
-
-                        if (this.state.dataList.data.content.result.couInfo[i].version[j].isSellected){
-                            isSelected = true;
-                            marr[i] = this.state.dataList.data.content.result.couInfo[i].version[j].couList[0].coutfCode
-                        }
                     }
 
+                    if (dataArr[i].version[j].isSellected){
+                        isSelected = true;
+                        marr[i] = dataArr[i].version[j].couList[0].coutfCode
+                    }
                 }
 
             }
+
         }
         let restr = `\[`;
         for (let i = 0 ; i < marr.length;i++){
@@ -93,35 +103,39 @@ class LectureList extends Component {
             "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
-
         let result = await Api.getZhlInterfaceUnifyEntry(params)
-
-
-        console.log(this.state.dataList,'111111')
         this.setState({
             }
         )
         window.history.back()
     }
 
+    //返回事件重写
     async tapLeftClick(){
 
-        if(this.state.dataList.data.content.result.couInfo){
-            for (let i = 0; i < this.state.dataList.data.content.result.couInfo.length; i++) {
-                let isSelected = false;
-                if (this.state.dataList.data.content.result.couInfo[i].version){
-                    for (let j = 0; j < this.state.dataList.data.content.result.couInfo[i].version.length;j++){
+        let dataArr = []
+        let gradeList = []
 
-                        for (let m = 0;m < this.state.gradeList.data.content.result.length;m++){
-                            store.remove(`${this.state.gradeList.data.content.result[m].gradeId}`+`${this.state.dataList.data.content.result.couInfo[i].subjectId}`)
+        if (this.state.dataList.data){
+            dataArr = this.state.dataList.data.content.result.couInfo
+        }
+        if (this.state.gradeList.data){
+            gradeList=this.state.gradeList.data.content.result
+        }
 
-                        }
+        for (let i = 0; i < dataArr.length; i++) {
+            if (dataArr[i].version){
+                for (let j = 0; j < dataArr[i].version.length;j++){
+
+                    for (let m = 0;m < gradeList.length;m++){
+                        store.remove(`${gradeList[m].gradeId}`+`${dataArr[i].subjectId}`)
 
                     }
 
                 }
 
             }
+
         }
 
         window.history.back()
@@ -129,7 +143,7 @@ class LectureList extends Component {
     }
 
 
-
+    /*获取用户信息*/
     getZhlInterfaceGrade = async () => {
         let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
         let method = "getUserInfoWithZJ";
@@ -147,21 +161,33 @@ class LectureList extends Component {
         this.getZhlInterfaceUnifyEntry()
     }
 
+    //获取所有教材版本信息
     getZhlInterfaceUnifyEntry = async () => {
         let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
         let method = "getVersionByGradeIdWithZJ";
 
-        let mGid = 7;
-        // console.log(,3333333)
-        // console.log(this.state.resultList.data.content.result,3333333)
 
+
+
+        let resData = {}
+        let gradeList = []
+
+        if (this.state.dataList.data){
+            resData = this.state.resultList.data.content.result
+        }
+        if (this.state.gradeList.data){
+            gradeList=this.state.gradeList.data.content.result
+        }
+
+        //存储年级信息到缓存
+        let mGid = 7;
         if (store.get("gradeId")) {
             mGid = store.get("gradeId")
 
         }else {
-            store.set("gradeId",this.state.resultList.data.content.result.gradeId)
-            store.set("gradeName",this.state.resultList.data.content.result.gradeName)
-            mGid = this.state.resultList.data.content.result.gradeId
+            store.set("gradeId",resData.gradeId)
+            store.set("gradeName",resData.gradeName)
+            mGid = resData.gradeId
         }
 
         var contentJson = {
@@ -169,68 +195,64 @@ class LectureList extends Component {
             "token":util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
-
-
-
         let result = await Api.getZhlInterfaceUnifyEntry(params)
 
-        if(result.data.content.result.couInfo){
-            for (let i = 0; i < result.data.content.result.couInfo.length; i++) {
-                if (result.data.content.result.couInfo[i].version){
-                    for (let j = 0; j < result.data.content.result.couInfo[i].version.length;j++){
+        let dataArr = []
+        if (result.data){
+            dataArr = result.data.content.result.couInfo
+        }
 
-                        let cur = `${mGid}`+`${result.data.content.result.couInfo[i].subjectId}`
+        //从store读取缓存数据
+        for (let i = 0; i < dataArr.length; i++) {
+            if (dataArr[i].version){
+                for (let j = 0; j < dataArr[i].version.length;j++){
 
-                        if (store.get(cur) == result.data.content.result.couInfo[i].version[j].versionTfCode){
-                            result.data.content.result.couInfo[i].version[j].isSellected = true;
-                        }else {
-                            result.data.content.result.couInfo[i].version[j].isSellected = false;
-                        }
+                    let cur = `${mGid}`+`${dataArr[i].subjectId}`
+
+                    if (store.get(cur) == dataArr[i].version[j].versionTfCode){
+                        dataArr[i].version[j].isSellected = true;
+                    }else {
+                        dataArr[i].version[j].isSellected = false;
                     }
-
                 }
 
             }
+
         }
 
-        if(result.data.content.result.couInfo){
-            for (let i = 0; i < result.data.content.result.couInfo.length; i++) {
-                let isSelected = false;
-                if (result.data.content.result.couInfo[i].version){
-                    for (let j = 0; j < result.data.content.result.couInfo[i].version.length;j++){
+        //设置默认教材版本
+        for (let i = 0; i < dataArr.length; i++) {
+            let isSelected = false;
+            if (dataArr[i].version){
+                for (let j = 0; j < dataArr[i].version.length;j++){
 
-                        if (result.data.content.result.couInfo[i].version[j].isSellected){
+                    if (dataArr[i].version[j].isSellected){
+                        isSelected = true;
+                        break;
+                    }
+                }
+                if (!isSelected){
+                    for (let j = 0; j < dataArr[i].version.length;j++){
+                        if (dataArr[i].version[j].versionTfCode.match("RJ")){
+                            dataArr[i].version[j].isSellected = true;
                             isSelected = true;
                             break;
                         }
                     }
-                    if (!isSelected){
-                        for (let j = 0; j < result.data.content.result.couInfo[i].version.length;j++){
-                            if (result.data.content.result.couInfo[i].version[j].versionTfCode.match("RJ")){
-                                result.data.content.result.couInfo[i].version[j].isSellected = true;
-                                isSelected = true;
-                                break;
-                            }
-                        }
-                    }
-                    if (!isSelected){
-                        result.data.content.result.couInfo[i].version[0].isSellected = true;
-                    }
                 }
-
+                if (!isSelected){
+                    dataArr[i].version[0].isSellected = true;
+                }
             }
+
         }
 
-
-
-        var arrayFilter = result.data.content.result.couInfo.filter(function(item) {
+        var arrayFilter = dataArr.filter(function(item) {
             return (item.version != null && item.subjectId == util.getSearchByName("subjectId"));
         });
         // localStorage.setItem("subjectbnabenlist"+mGid,{})
 
         result.data.content.result.couInfo = arrayFilter
-        console.log(result.data.content.result,'66666666');
-
         this.setState({
                 dataList:result
             }
@@ -246,14 +268,10 @@ class LectureList extends Component {
         let resList = {}
         if (resultList.data){
             resList = resultList.data.content.result
-
-
         }
         if (dataList.data){
             myDataList = dataList.data.content.result
-
         }
-
         var couList = [];
         if (myDataList){
             couList = myDataList.couInfo;
@@ -321,4 +339,3 @@ class LectureList extends Component {
     }
 }
 
-export default LectureList;
