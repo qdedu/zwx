@@ -20,6 +20,21 @@ class LectureList extends Component {
 
     componentDidMount() {
         this.getContentByCurrId()
+        this.updateCurrState()
+    }
+
+
+    updateCurrState = async () => {
+        let className = "com.zhl.unify.interfaces.move_work.service.ZwxClientService";
+        let method = "updateCurrState";
+
+        var contentJson = {
+            "currId": util.getSearchByName("courseId"),
+            "token": util.getToken(),
+            "couState": 1
+        }
+        let params = new DoApi.createParamJSON(className, method, contentJson)
+        let result = await Api.getZhlInterfaceUnifyEntry(params)
     }
 
 
