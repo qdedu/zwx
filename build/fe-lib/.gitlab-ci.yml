@@ -1,0 +1,10 @@
+stages:
+- publish
+
+
+publish-local:
+  stage: publish
+  only:
+     - master
+  script:
+   - xcopy "*"  "D:\tfedu\cloud-container\fe-lib\" /S/E/Y
