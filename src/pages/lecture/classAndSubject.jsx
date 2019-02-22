@@ -4,7 +4,7 @@ import Api from '../../api/api'
 import DoApi from "../../utils/axios/DoApi";
 import TitleBar from '../../components/titlebar/TitleBar'
 
-export default LectureList;
+
 
 class LectureList extends Component {
 
@@ -339,3 +339,4 @@ class LectureList extends Component {
     }
 }
 
+export default LectureList;
