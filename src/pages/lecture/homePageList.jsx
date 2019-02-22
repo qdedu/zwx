@@ -10,12 +10,12 @@ class LectureList extends Component {
         super(props);
         this.state = {
             dataList: {},
-            gradeList:{}
+            gradeList: {}
         }
     }
 
     onClickLectureItem = async (item) => {
-        util.goForward(`/lectureList?courseId=${item.courseId}&courseTitle=${item.courseTitle}`, this)
+        util.goForward(`/lectureList?courseId=${item.courseId}&courseTitle=${item.courseTitle}&courseState=${item.courseState}`, this)
     }
 
     onClickJiaoCai = async () => {
@@ -34,13 +34,13 @@ class LectureList extends Component {
         let method = "getUserInfoWithZJ";
 
         var contentJson = {
-            "token":util.getToken()
+            "token": util.getToken()
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)
 
         this.setState({
-                gradeList:result
+                gradeList: result
             }
         )
     }
@@ -51,17 +51,17 @@ class LectureList extends Component {
         let method = "getCurrPage";
 
         let gradeId = 7;
-        if (store.get("gradeId")){
+        if (store.get("gradeId")) {
             gradeId = store.get("gradeId")
         }
 
-        console.log(util.getToken(),111111);
+        console.log(util.getToken(), 111111);
         var contentJson = {
-            "catalogTfcode":"RJCZ0201",
-            "gradeId":gradeId,
-            "token":util.getToken(),
-            "currentPage":1,
-            "linesPerPage":10000
+            "catalogTfcode": "RJCZ0201",
+            "gradeId": gradeId,
+            "token": util.getToken(),
+            "currentPage": 1,
+            "linesPerPage": 10000
         }
         let params = new DoApi.createParamJSON(className, method, contentJson)
         let result = await Api.getZhlInterfaceUnifyEntry(params)
@@ -72,7 +72,7 @@ class LectureList extends Component {
         }
         console.log(result);
         this.setState({
-                dataList:result
+                dataList: result
             }
         )
     }
@@ -91,31 +91,31 @@ class LectureList extends Component {
     }
 
     render() {
-        let {dataList,gradeList} = this.state
+        let {dataList, gradeList} = this.state
 
         let myDataList = []
-        if (dataList.data){
+        if (dataList.data) {
             myDataList = dataList.data.content.result.list_curr
-            console.log(dataList.data.content.result.list_curr,111111);
+            console.log(dataList.data.content.result.list_curr, 111111);
         }
 
         let gradeDataList = []
-        if (gradeList.data){
+        if (gradeList.data) {
             gradeDataList = gradeList.data.content.result.couList
-            console.log(gradeList.data.content.result.couList,88888);
+            console.log(gradeList.data.content.result.couList, 88888);
         }
 
-        var benzhouFilter = myDataList.filter(function(item) {
+        var benzhouFilter = myDataList.filter(function (item) {
             return item.isThisWeek == 1;
         });
 
-        var arrayFilter = myDataList.filter(function(item) {
+        var arrayFilter = myDataList.filter(function (item) {
             return item.isThisWeek == 0;
         });
         let myTppe = "初中数学人教版";
-        for (let i = 0;i<gradeDataList.length;i++){
-            if(gradeDataList[i].subjectId == 2){
-                myTppe= gradeDataList[i].couPVersinName;
+        for (let i = 0; i < gradeDataList.length; i++) {
+            if (gradeDataList[i].subjectId == 2) {
+                myTppe = gradeDataList[i].couPVersinName;
             }
         }
 
@@ -128,47 +128,54 @@ class LectureList extends Component {
                 <TitleBar title='数学' isCanBack={false}/>
 
                 <div className="jiaocaibanben" onClick={this.onClickJiaoCai}>
-                    <div className="jiaocaiName"><span className="myWordColor">{gradeList.data?gradeList.data.content.result.gradeName:"八年级"} | {myTppe}</span></div>
+                    <div className="jiaocaiName"><span
+                        className="myWordColor">{gradeList.data ? gradeList.data.content.result.gradeName : "八年级"} | {myTppe}</span>
+                    </div>
                     <div className="jinru"><span className="myWordColor">></span></div>
                 </div>
 
                 <div className="home">
                     <div className="class-type-benZhou">
-                        <img style={{width:'17.5px',height :'13.5px',padding:'0px 5px 0px 0px'}} src="static/img/benzhoukecheng-icon.png" alt=""/>
+                        <img style={{width: '17.5px', height: '13.5px', padding: '0px 5px 0px 0px'}}
+                             src="static/img/benzhoukecheng-icon.png" alt=""/>
                         <span className='wordColor'>本周课程</span>
                     </div>
                     <div className="homeList">
                         {
-                            (benzhouFilter||[]).map((item, index) => {
-                                return (
-                                    <div className="listCell" onClick={()=>this.onClickLectureItem(item)}>
-                                        <div className="cellImg">
-                                            <img className="img" style={{width:'100%'}} src={item.thumbnailPath} alt=""/>
-                                            <span className="videoNum">{item.videoNum}段视频</span>
+                            (benzhouFilter || []).map((item, index) => {
+                                    return (
+                                        <div className="listCell" onClick={() => this.onClickLectureItem(item)}>
+                                            <div className="cellImg">
+                                                <img className="img" style={{width: '100%'}} src={item.thumbnailPath}
+                                                     alt=""/>
+                                                <span className="videoNum">{item.videoNum}段视频</span>
+                                                <img id='see-track' src={item.courseState == 0 ? '../../../public/static/img/foot_off.png' : '../../../public/static/img/foot_on.png'}/>
+                                            </div>
+                                            <div className="titleName">{item.courseTitle}</div>
+                                            <div className="titleDate">{item.issuedTime}</div>
                                         </div>
-                                        <div className="titleName">{item.courseTitle}</div>
-                                        <div className="titleDate">{item.issuedTime}</div>
-                                    </div>
-                                )
+                                    )
                                 }
                             )
                         }
                     </div>
 
 
-
                     <div className="class-type-wangQi">
-                        <img style={{width:'16px',height :'16px',padding:'0px 5px 0px 0px'}} src="static/img/wangqikecheng-icon.png" alt=""/>
+                        <img style={{width: '16px', height: '16px', padding: '0px 5px 0px 0px'}}
+                             src="static/img/wangqikecheng-icon.png" alt=""/>
                         <span className='wordColor'>往期课程</span>
                     </div>
                     <div className="homeList">
                         {
-                            (arrayFilter||[]).map((item, index) => {
+                            (arrayFilter || []).map((item, index) => {
                                     return (
-                                        <div className="listCell" onClick={()=>this.onClickLectureItem(item)}>
+                                        <div className="listCell" onClick={() => this.onClickLectureItem(item)}>
                                             <div className="cellImg">
-                                                <img className="img" style={{width:'100%'}} src={item.thumbnailPath} alt=""/>
+                                                <img className="img" style={{width: '100%'}} src={item.thumbnailPath}
+                                                     alt=""/>
                                                 <span className="videoNum">{item.videoNum}段视频</span>
+                                                <img id='see-track' src={item.courseState == 0 ? '../../../public/static/img/foot_off.png' : '../../../public/static/img/foot_on.png'}/>
                                             </div>
                                             <div className="titleName"><span>{item.courseTitle}</span></div>
                                             <div className="titleDate">{item.issuedTime}</div>
