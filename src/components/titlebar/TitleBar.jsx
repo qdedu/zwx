@@ -15,7 +15,7 @@ class TitleBar extends Component {
     render() {
         return (
             <div id='title-bar'>
-                <img id='img-back' src='../../../public/static/img/ic_back.png'
+                <img id='img-back' src='static/img/ic_back.png'
                      onClick={this.props.isCanBack
                          ? this.props.onLeftClick
                          : this.onBackClick}></img>

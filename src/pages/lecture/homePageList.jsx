@@ -149,7 +149,7 @@ class LectureList extends Component {
                                                 <img className="img" style={{width: '100%'}} src={item.thumbnailPath}
                                                      alt=""/>
                                                 <span className="videoNum">{item.videoNum}段视频</span>
-                                                <img id='see-track' src={item.courseState == 0 ? '../../../public/static/img/foot_off.png' : '../../../public/static/img/foot_on.png'}/>
+                                                <img id='see-track' src={item.courseState == 0 ? 'static/img/foot_off.png' : 'static/img/foot_on.png'}/>
                                             </div>
                                             <div className="titleName">{item.courseTitle}</div>
                                             <div className="titleDate">{item.issuedTime}</div>
@@ -175,7 +175,7 @@ class LectureList extends Component {
                                                 <img className="img" style={{width: '100%'}} src={item.thumbnailPath}
                                                      alt=""/>
                                                 <span className="videoNum">{item.videoNum}段视频</span>
-                                                <img id='see-track' src={item.courseState == 0 ? '../../../public/static/img/foot_off.png' : '../../../public/static/img/foot_on.png'}/>
+                                                <img id='see-track' src={item.courseState == 0 ? 'static/img/foot_off.png' : 'static/img/foot_on.png'}/>
                                             </div>
                                             <div className="titleName"><span>{item.courseTitle}</span></div>
                                             <div className="titleDate">{item.issuedTime}</div>

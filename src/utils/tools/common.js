@@ -358,14 +358,8 @@ const isClassId = function (id) {
  * @param {*} context this
  */
 const goForward = function (url, context) {
-    let originUrl = location.origin + location.pathname + '#'
-    if (getDeviceType().isBrowser) {
-        context.props.history.push(url)
-    } else {
-        dsBridge.call("openNewPage", {
-            "data": originUrl + url
-        });
-    }
+    context.props.history.push(url)
+
 }
 
 /**
