@@ -147,6 +147,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "ant-mobile": "^0.0.0"
+    "ant-mobile": "^0.0.0",
+    "gh-pages": "^2.0.1"
   }
 }
